@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="encog">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/encog-core-3.3.0-release/encog-core-3.3.0/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/encog-core-3.3.0-release/encog-core-3.3.0/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/encog-core-3.3.0-release/encog-core-3.3.0/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
