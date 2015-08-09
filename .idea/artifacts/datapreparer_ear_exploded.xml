@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="datapreparer:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/datapreparer_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="datapreparer/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="encog-core-3.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/encog-examples-3.1.0-release/encog-examples-3.1.0/lib/encog-core-3.1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/encog-examples-3.1.0-release/encog-examples-3.1.0/lib/encog-examples-3.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
