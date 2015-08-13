@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--<import resource="classpath:../neuralnet-spring.xml"/>-->
+
+       <alias name="defaultNeuralNet" alias="neuralNet"/>
+       <bean id="defaultNeuralNet" class="biai.neuralnet.impl.DefaultNeuralNet"/>
+
+       <alias name="defaultProgram" alias="program"/>
+       <bean id="defaultProgram" class="biai.main.execute.NeuralNetLife">
+              <property name="neuralNet" ref="neuralNet"/>
+       </bean>
+</beans>

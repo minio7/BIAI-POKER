@@ -7,11 +7,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="biai" />
           <element id="module-output" name="neuralnet" />
+          <element id="module-output" name="datapreparer" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="encog-core-3.1.0-SNAPSHOT" />
+          <element id="library" level="project" name="Spring-4.1.6.RELEASE" />
         </element>
       </element>
+      <element id="library" level="project" name="encog" />
     </root>
   </artifact>
 </component>
