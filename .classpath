@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="neuralnet"/>
+	<classpathentry kind="src" path="datapreparer"/>
+	<classpathentry kind="src" path="model"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/encog-core-3.1.0-SNAPSHOT"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/neuralnet"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/datapreparer"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring-4.1.6.RELEASE"/>
+	<classpathentry kind="output" path="out/production/biai"/>
+</classpath>

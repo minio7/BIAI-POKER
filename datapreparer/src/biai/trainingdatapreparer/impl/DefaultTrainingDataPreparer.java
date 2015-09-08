@@ -1,9 +1,9 @@
-package trainingdatapreparer.impl;
+package biai.trainingdatapreparer.impl;
 
 import biai.models.TrainingData;
+import biai.trainingdatapreparer.TrainingDataPreparer;
 import org.encog.util.arrayutil.NormalizationAction;
 import org.encog.util.arrayutil.NormalizedField;
-import trainingdatapreparer.TrainingDataPreparer;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -61,33 +61,6 @@ public class DefaultTrainingDataPreparer implements TrainingDataPreparer
     @Override
     public void normalizeTrainingData(TrainingData dataToNormalize)
     {
-//        double maxInputValue = 0;
-//        double maxOutputValue = 0;
-//
-//        for (int i = 0; i < dataToNormalize.getInputArray().length; ++i)
-//        {
-//            for (int j = 0; j < dataToNormalize.getInputSize(); ++j)
-//            {
-//                if (dataToNormalize.getInputArray()[i][j] > maxInputValue)
-//                    maxInputValue = dataToNormalize.getInputArray()[i][j];
-//            }
-//        }
-//        for (int i = 0; i < dataToNormalize.getInputArray().length; ++i)
-//        {
-//            for (int j = 0; j < dataToNormalize.getInputSize(); ++j)
-//            {
-//                dataToNormalize.getInputArray()[i][j] = dataToNormalize.getInputArray()[i][j] / maxInputValue;
-//            }
-//        }
-//        for(int i = 0; i<dataToNormalize.getOutputArray().length;++i)
-//        {
-//            if(dataToNormalize.getOutputArray()[i][0]>maxOutputValue)
-//                maxOutputValue = dataToNormalize.getOutputArray()[i][0];
-//        }
-//        for (int i = 0; i<dataToNormalize.getOutputArray().length;++i)
-//        {
-//            dataToNormalize.getOutputArray()[i][0] = dataToNormalize.getOutputArray()[i][0]/maxOutputValue;
-//        }
         NormalizedField normS = new NormalizedField(NormalizationAction.Normalize,
                 null,13,1,1,-1);
 
@@ -95,7 +68,7 @@ public class DefaultTrainingDataPreparer implements TrainingDataPreparer
                 null,4,1,1,-1);
 
         NormalizedField normO = new NormalizedField(NormalizationAction.Normalize,
-                null,10,0,1,-1);
+                null,9,0,1,-1);
         for(int i= 0 ; i<dataToNormalize.getInputArray().length;++i)
         {
             dataToNormalize.getOutputArray()[i][0] = normO.normalize(dataToNormalize.getOutputArray()[i][0]);

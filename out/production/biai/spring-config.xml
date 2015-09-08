@@ -3,16 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-<import resource="classpath:biai/neuralnet/neuralnet-spring.xml"/>
-<context:component-scan base-package="biai"/>
+<import resource="classpath:/biai/datapreparer-config.xml"/>
+<import resource="classpath:/biai/neuralnet-config.xml"/>
 
+       <bean id="neuralNetProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+              <property name="location" value="classpath:/neuralnet.properties"/>
+       </bean>
 
        <alias name="defaultProgram" alias="program"/>
        <bean id="defaultProgram" class="biai.main.execute.NeuralNetLife">
               <property name="neuralNet" ref="neuralNet"/>
-       </bean>
-
-       <bean id="defaultJ" class="java.lang.Integer">
-              <constructor-arg type="java.lang.String" value="1"/>
+              <property name="trainingDataPreparer" ref="trainingDataPreparer"/>
+              <property name="testDataPreparer" ref="testDataPreparer"/>
        </bean>
 </beans>

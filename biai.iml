@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module classpath="eclipse" classpath-dir="$MODULE_DIR$" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="javaeeApplication" name="javaEEApplication">
       <configuration>
@@ -13,21 +13,12 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/spring-config.xml</file>
           <file>file://$MODULE_DIR$/neuralnet/src/biai/neuralnet/neuralnet-spring.xml</file>
+          <file>file://$MODULE_DIR$/datapreparer/src/biai/spring-config.xml</file>
+          <file>file://$MODULE_DIR$/neuralnet/neuralnet-spring.xml</file>
+          <file>file://$MODULE_DIR$/neuralnet/src/biai/neuralnet-config.xml</file>
+          <file>file://$MODULE_DIR$/neuralnet/src/biai/neuralnet-config.xml</file>
         </fileset>
       </configuration>
     </facet>
-  </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/model" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="encog-core-3.1.0-SNAPSHOT" level="project" />
-    <orderEntry type="module" module-name="neuralnet" />
-    <orderEntry type="module" module-name="datapreparer" />
-    <orderEntry type="library" name="Spring-4.1.6.RELEASE" level="project" />
   </component>
 </module>

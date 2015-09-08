@@ -21,6 +21,7 @@ public class DefaultNeuralNet implements NeuralNet
         for(int i=1; i < layersNum; ++i)
         {
             basicNetwork.addLayer(new BasicLayer(new ActivationTANH(),true,layersSizes[i]));
+            System.out.println(layersSizes[i]);
         }
         basicNetwork.getStructure().finalizeStructure();
         basicNetwork.reset();
@@ -57,8 +58,6 @@ public class DefaultNeuralNet implements NeuralNet
         for(MLDataPair pair : dataToTest)
         {
             final MLData output = networkToTest.compute(pair.getInput());
-            //System.out.println("Input[0]: "+ pair.getInput().getData(0) + " Input[1]: " + pair.getInput().getData(1) + "" +
-            //        " Output: " + output.getData(0));
             outputToWrite[index][0] =output.getData(0);
             index++;
         }

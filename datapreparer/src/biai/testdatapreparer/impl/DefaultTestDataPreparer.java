@@ -2,6 +2,7 @@ package biai.testdatapreparer.impl;
 
 import biai.models.TestData;
 import biai.testdatapreparer.TestDataPreparer;
+import com.sun.deploy.util.ArrayUtil;
 import org.encog.util.arrayutil.NormalizationAction;
 import org.encog.util.arrayutil.NormalizedField;
 
@@ -9,9 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by I319033 on 2015-08-03.
- */
+
 public class DefaultTestDataPreparer implements TestDataPreparer
 {
 
@@ -72,8 +71,6 @@ public class DefaultTestDataPreparer implements TestDataPreparer
         NormalizedField normC = new NormalizedField(NormalizationAction.Normalize,
                 null,4,1,1,-1);
 
-        NormalizedField normO = new NormalizedField(NormalizationAction.Normalize,
-                null,10,0,1,-1);
         for(int i= 0 ; i<testDataToNormalize.getInputData().length;++i)
         {
             for(int j=0; j<testDataToNormalize.getInputSize();++j)
@@ -87,22 +84,11 @@ public class DefaultTestDataPreparer implements TestDataPreparer
     @Override
     public void retriveOutputTestData(TestData testDataToRetrive)
     {
-        double findMin = 20.0;
-        double findMax = -1.0;
+        NormalizedField normO = new NormalizedField(NormalizationAction.Normalize,null,1.0,-1.0,9,0);
 
-        for(int i= 0 ;i<testDataToRetrive.getOutputData().length;++i)
-        {
-            if(testDataToRetrive.getOutputData()[i][0] > findMax)
-                findMax =testDataToRetrive.getOutputData()[i][0];
-            if(testDataToRetrive.getOutputData()[i][0] <findMin)
-                findMin = testDataToRetrive.getOutputData()[i][0];
-        }
-        double interval = findMax-findMin;
         for(int i = 0; i<testDataToRetrive.getOutputData().length;++i)
         {
-            testDataToRetrive.getOutputData()[i][0] -=findMin;
-            testDataToRetrive.getOutputData()[i][0] /=interval;
-            testDataToRetrive.getOutputData()[i][0] = Math.round(testDataToRetrive.getOutputData()[i][0]*9);
+            testDataToRetrive.getOutputData()[i][0] = normO.normalize(testDataToRetrive.getOutputData()[i][0]);
             testDataToRetrive.getOutputList().get(i)[1]=Math.round(testDataToRetrive.getOutputData()[i][0]);
         }
     }
@@ -120,6 +106,5 @@ public class DefaultTestDataPreparer implements TestDataPreparer
 
         writer.flush();
         writer.close();
-
     }
 }
